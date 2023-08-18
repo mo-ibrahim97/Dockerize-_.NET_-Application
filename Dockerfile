@@ -13,6 +13,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 #use output of stage one and copy of all files in new app dir
 COPY --from=build /app .
+EXPOSE  8070
 
 ENTRYPOINT [ "dotnet", "hrapp.dll" ]
 
